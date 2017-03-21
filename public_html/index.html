@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script>
+                var lat,long;
+                var geo="http://ip-api.com/json";
+                $(document).ready((function(){
+                    $.getJSON(geo,function(data){
+                        lat=data.lat;
+                        long=data.lon;
+                       /// alert("Longitude is"+long);
+ var api="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=ea3fb1dae8da9a0d6864556741ffa2aa";   
+                    $.getJSON(api,function(data){
+                           alert(data.coord.lon);
+                       }
+    
+)
+    });
+ }));
+            </script>
+		<title> Welcome </title>
+	</head>
+	<body>
+		<div id="id">helloooo</div>
+                
+	</body>
+</html>
