@@ -2,81 +2,19 @@
 <html>
 	<head>
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-            <script type="text/javascript">
-                var lat,long;
-                var geo="http://ip-api.com/json";
-                $(document).ready((function(){
-                    $.getJSON(geo,function(data){
-                        lat=data.lat;
-                        long=data.lon;
-                       //alert("Longitude is"+long);
- var api="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&appid=ea3fb1dae8da9a0d6864556741ffa2aa";   
-                    $.getJSON(api,function(data){
-                           //alert(data.coord.lon);
-                           //console.log(data.name);
-                           var t=data.main.temp;
-                           t=t-270.15;
-                            $("#id1").html("Hi there..!! You are from "+data.name+"..!!");
-                            $("#id2").html("Its is "+t+" &#x2103;");
-                            if(t<30)
-                            $("#id3").html("Ok..!! Could manage the temperature..!! ");
-                            else
-                            $("#id3").html("Too hot to survive..!! ");
-                            var utcSeconds = data.sys.sunrise;
-                            var d = new Date(0);
-                            d.setUTCSeconds(utcSeconds);
-                            $("#id4").html("Today Sunrise was at "+d.getHours()+":"+d.getUTCMinutes()+" AM");
-                            var utcSeconds = data.sys.sunset;
-                            var d = new Date(0);
-                            d.setUTCSeconds(utcSeconds);
-                            $("#id5").html("Today Sunset was at "+d.getHours()+":"+d.getUTCMinutes()+" PM");
-                            
-                           
-                       }
-)});
- }));
-            </script>
-		<title> Weather Today..!!!</title>
-                <style>
-                    body{
-                        background-image: url("https://www.walldevil.com/wallpapers/a39/background-wallpaper-nature-cloud-dark-wallpapers-clouds-pictures-weather-albums.jpg");
-                    }
-                    
-                h1{
-                    font-family: times, Times New Roman, times-roman, georgia, serif;
-                    font-size: 70px;
-                    color: #D0F8FF;
-                    text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
-                    0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
-                    0 0 40px #A5F1FF;
-
-                    text-align: center;
-                    margin: auto;
-                    width: 80%;
-                    
-                }
-                p{
-                    font-family: sans-serif;
-                    font-size: 30px;
-                    text-align: center;
-                    color: #a0F8FF;
-                    margin: auto;
-                    width: 80%;
-                    padding: 10px;
-                    align-items: center;
-                }
-                </style>
-
-	</head>
+            <script type="text/javascript" src="script.js"></script>
+            <link rel="stylesheet" type="text/css" href="mystyle.css">
+            <title> Weather Today..!!!</title>
+        </head>
         
         <body><br><br>
             <h1 >Weather  right  now..!!!</h1>
            <br><br>
             <p id="id1">Loading..!!!</p><br>
-                <p id="id2">Loading..!!!</p><br>
-                <p id="id3">Loading..!!!</p><br>
-                <p id="id4">Loading..!!!</p><br>
-                <p id="id5">Loading..!!!</p><br>
-                <p> Have a good day..!!!</p> 
+            <p id="id2">Loading..!!!</p><br>
+            <p id="id3">Loading..!!!</p><br>
+            <p id="id4">Loading..!!!</p><br>
+            <p id="id5">Loading..!!!</p><br>
+            <p> Have a good day..!!!</p> 
 	</body>
 </html>
